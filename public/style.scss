@@ -1,0 +1,111 @@
+$pc: 992px; // PC
+$tab: 768px; // タブレット
+$sp: 576px;  // スマホ
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin -pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin -tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin -sp {
+  @media (min-width: ($sp)) {
+    @content;
+  }
+}
+
+.card{
+  margin:20px 0 20px;
+}
+
+footer{
+  height:100px;
+  
+  p{
+    padding-top:30px;
+  }
+}
+
+img{
+  width:100%;
+}
+
+.card-text{
+  display:flex;
+  justify-content:space-between;
+}
+
+.contentinfo{
+  margin:50px 0;
+
+  p{
+    margin:30px 0;
+  }
+}
+
+.icon{
+  text-align:center;
+  img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+  }
+}
+
+.logo{
+  text-align:center;
+  margin:20px 0 50px;
+  img{
+    width:300px;
+  }
+}
+
+.card-img-box{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+
+  @include -pc {
+    height:250px;
+  }
+
+  @include -sp{
+    height:150px;
+  }
+}
+
+.d-inline-block{
+  cursor:pointer;
+  :hover{
+    opacity:0.7;
+  }
+}
+
+body{
+  
+
+  > .container-fluid{
+    padding-top:80px;
+  }
+}
